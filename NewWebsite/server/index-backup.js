@@ -218,10 +218,105 @@ async function sendApprovedEmail(email, platform) {
   }
 
   try {
-    const androidLink = 'https://play.google.com/apps/testing/com.nutritheapp.nutriai';
+    const androidLink = 'https://play.google.com/store/apps/details?id=com.nutritheapp.nutriai';
     const iosLink = 'https://apps.apple.com/pl/app/nutri-ai/id6747520795';
 
     const htmlContent = getApprovalEmailHTML(androidLink, iosLink);
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+          .header { background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white; padding: 30px; text-align: center; border-radius: 10px; }
+          .content { background: #f9f9f9; padding: 30px; border-radius: 10px; margin-top: 20px; }
+          .button { display: inline-block; padding: 15px 40px; background: #10B981; color: white; text-decoration: none; border-radius: 25px; font-weight: bold; margin: 10px 5px; font-size: 16px; }
+          .button:hover { background: #059669; }
+          .button-ios { background: #007AFF; }
+          .button-ios:hover { background: #0051D5; }
+          .steps { background: white; padding: 20px; border-radius: 8px; margin: 15px 0; }
+          .step { margin: 15px 0; padding-left: 30px; position: relative; }
+          .step-number { position: absolute; left: 0; top: 0; background: #10B981; color: white; width: 24px; height: 24px; border-radius: 50%; text-align: center; line-height: 24px; font-weight: bold; font-size: 12px; }
+          .highlight { background: #D1FAE5; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #10B981; }
+          .download-section { background: white; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center; }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>🎉 You're Approved!</h1>
+            <p>Welcome to NutriAI Beta Program</p>
+          </div>
+          
+          <div class="content">
+            <h2>Congratulations! Your application has been approved.</h2>
+            <p>We're thrilled to have you as an early tester for NutriAI. Your feedback will directly shape the future of our AI-powered nutrition platform.</p>
+            
+            <div class="highlight">
+              <h3>✨ You're now part of an exclusive group!</h3>
+              <p>As a beta tester, you get:</p>
+              <ul style="margin: 10px 0;">
+                <li>Full access to all premium features</li>
+                <li>Direct support from our team</li>
+                <li>Priority for future updates</li>
+                <li>Exclusive lifetime perks</li>
+              </ul>
+            </div>
+            
+            <div class="download-section">
+              <h3>� Download NutriAI Now!</h3>
+              <p>Choose your platform and start testing:</p>
+              <div style="margin: 20px 0;">
+                <a href="${androidLink}" class="button">🤖 Get on Android</a>
+                <a href="${iosLink}" class="button button-ios">🍎 Get on iOS</a>
+              </div>
+              <p style="font-size: 14px; color: #666; margin-top: 20px;">
+                <strong>Android Link:</strong> ${androidLink}<br>
+                <strong>iOS Link:</strong> ${iosLink}
+              </p>
+            </div>
+            
+            <div class="steps">
+              <h3>📱 Quick Start Guide:</h3>
+              <div class="step">
+                <div class="step-number">1</div>
+                <strong>Download the app</strong><br>
+                Click the button above for your platform
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <strong>Install & Open</strong><br>
+                Launch NutriAI on your device
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <strong>Create Account</strong><br>
+                Set up your profile and preferences
+              </div>
+              <div class="step">
+                <div class="step-number">4</div>
+                <strong>Start Exploring!</strong><br>
+                Test all features and share your feedback
+              </div>
+            </div>
+            
+            <div style="background: #E3F4FF; padding: 20px; border-radius: 8px; margin-top: 20px;">
+              <h3>💬 We Want Your Feedback!</h3>
+              <p>Found a bug? Have a feature idea? We'd love to hear from you!</p>
+              <p style="margin: 10px 0;">Reply to this email anytime or reach out at <strong>support@nutriai.pl</strong></p>
+            </div>
+            
+            <p style="color: #666; font-size: 14px; margin-top: 30px;">
+              Thank you for being part of NutriAI's journey!<br><br>
+              Best regards,<br>
+              The NutriAI Team
+            </p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+
     await transporter.sendMail({
       from: process.env.EMAIL_FROM,
       to: email,
@@ -377,112 +472,6 @@ async function sendAdminNotification(email, platform) {
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', testers: betaTesters.length });
-});
-
-// Contact form submission
-app.post('/api/contact', async (req, res) => {
-  try {
-    const { name, email, country, phone, message } = req.body;
-
-    if (!name || !email || !message) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Name, email, and message are required' 
-      });
-    }
-
-    const transporter = getEmailTransporter();
-    if (!transporter) {
-      console.log('Email service not configured');
-      return res.status(500).json({ 
-        success: false, 
-        message: 'Email service not configured' 
-      });
-    }
-
-    // Create email content
-    const htmlContent = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <style>
-          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: linear-gradient(135deg, #33A9FF 0%, #0088E6 100%); color: white; padding: 30px; text-align: center; border-radius: 10px; }
-          .content { background: #f9f9f9; padding: 30px; border-radius: 10px; margin-top: 20px; }
-          .field { background: white; padding: 15px; border-radius: 8px; margin: 10px 0; }
-          .field-label { font-weight: bold; color: #666; font-size: 12px; text-transform: uppercase; margin-bottom: 5px; }
-          .field-value { color: #333; font-size: 16px; }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <h1>📬 New Contact Form Submission</h1>
-            <p>Someone reached out through the NutriAI website</p>
-          </div>
-          
-          <div class="content">
-            <div class="field">
-              <div class="field-label">Name</div>
-              <div class="field-value">${name}</div>
-            </div>
-            
-            <div class="field">
-              <div class="field-label">Email</div>
-              <div class="field-value">${email}</div>
-            </div>
-            
-            ${country ? `
-            <div class="field">
-              <div class="field-label">Country</div>
-              <div class="field-value">${country}</div>
-            </div>
-            ` : ''}
-            
-            ${phone ? `
-            <div class="field">
-              <div class="field-label">Phone</div>
-              <div class="field-value">${phone}</div>
-            </div>
-            ` : ''}
-            
-            <div class="field">
-              <div class="field-label">Message</div>
-              <div class="field-value">${message.replace(/\n/g, '<br>')}</div>
-            </div>
-            
-            <p style="color: #666; font-size: 14px; margin-top: 30px;">
-              Received: ${new Date().toLocaleString('en-US', { timeZone: 'Europe/Warsaw' })} (Warsaw time)
-            </p>
-          </div>
-        </div>
-      </body>
-      </html>
-    `;
-
-    // Send email to support
-    await transporter.sendMail({
-      from: process.env.EMAIL_FROM || 'support@nutriai.pl',
-      to: 'support@nutriai.pl',
-      subject: `Contact Form: ${name}`,
-      html: htmlContent,
-      replyTo: email
-    });
-
-    console.log(`Contact form submitted by ${email}`);
-    
-    res.json({ 
-      success: true, 
-      message: 'Your message has been sent successfully!' 
-    });
-  } catch (error) {
-    console.error('Error processing contact form:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to send message. Please try again later.' 
-    });
-  }
 });
 
 // Get admin settings
