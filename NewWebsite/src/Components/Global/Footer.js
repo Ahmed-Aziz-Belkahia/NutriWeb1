@@ -161,13 +161,7 @@ const Footer = () => {
           </div>
           <div className="col-md-4">
             <p className="developer_text">
-              Design &amp; developed by
-              <Link
-                to="https://themeforest.net/user/kalanidhithemes/portfolio"
-                target="blank"
-              >
-                Kalanidhi Themes
-              </Link>
+              Design &amp; developed by NutriAI Team
             </p>
           </div>
         </div>
