@@ -1002,7 +1002,7 @@ header.fixed .navbar {
 .banner_section .app_btn li a {
     display: block;
     padding: 16px 30px;
-    background-color: transparent;
+    background-color: var(--primary);
     position: relative;
     border-radius: 12px;
     transition: .4s all;/*width: 182px;*/
@@ -1020,19 +1020,23 @@ header.fixed .navbar {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    opacity: 1;
+}
+
+.banner_section .app_btn li a .blue_img {
     opacity: 0;
 }
 
 .banner_section .app_btn li a:hover {
-    background-color: var(--primary);
+    background-color: transparent;
 }
 
 .banner_section .app_btn li a:hover .blue_img {
-    opacity: 0;
+    opacity: 1;
 }
 
 .banner_section .app_btn li a:hover .white_img {
-    opacity: 1;
+    opacity: 0;
 }
 
 /* hero slider users */
