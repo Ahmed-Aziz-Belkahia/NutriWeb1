@@ -1002,7 +1002,7 @@ header.fixed .navbar {
 .banner_section .app_btn li a {
     display: block;
     padding: 16px 30px;
-    background-color: var(--secondary);
+    background-color: transparent;
     position: relative;
     border-radius: 12px;
     transition: .4s all;/*width: 182px;*/
