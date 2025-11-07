@@ -58,17 +58,17 @@
 /* -----------Css-variable------ */
 
 :root {
-    --primary: #4A90E2;
-    --secondary: #2563EB;
+    --primary: #75C5C1;
+    --secondary: #102A63;
     --body-text: #3e3f66;
     --white: #ffffff;
-    --lighter1: #EFF6FF;
-    --lighter2: #DBEAFE;
-    --lighter3:#BFDBFE;
-    --purplishgray:#DBEAFE;
-    --border:#93C5FD;
-    --slider-dots-color: #BFDBFE;
-    --red-color:#ee6464;
+    --lighter1: #E8F5F4;
+    --lighter2: #C9EEEB;
+    --lighter3:#A8E3DF;
+    --purplishgray:#C9EEEB;
+    --border:#75C5C1;
+    --slider-dots-color: #A8E3DF;
+    --red-color:#C51A1B;
     --green-color:#33c433; 
 }
 
