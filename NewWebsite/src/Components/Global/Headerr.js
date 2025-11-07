@@ -59,6 +59,11 @@ const Main = () => {
                     About us
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/beta">
+                    Beta
+                  </Link>
+                </li>
                 <li className="nav-item has_dropdown">
                   <Link className="nav-link" to="#" onClick={() => toggleDropdown(1)}>
                     Pages
@@ -150,6 +155,11 @@ const Main = () => {
                 <li className="nav-item">
                   <Link className="nav-link" to="/about">
                     About us
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/beta">
+                    Beta
                   </Link>
                 </li>
                 <li className="nav-item has_dropdown">
