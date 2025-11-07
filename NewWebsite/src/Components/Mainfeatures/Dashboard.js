@@ -44,7 +44,7 @@ const Dashboard = () => {
                         borderRadius: '50%',
                         backgroundColor: '#DBEAFE'
                       }}>
-                        <FontAwesomeIcon icon={faUtensils} style={{ fontSize: '30px', color: '#4A90E2' }} />
+                        <FontAwesomeIcon icon={faUtensils} style={{ fontSize: '30px', color: '#75C5C1' }} />
                       </div>
                       <div className="text">
                         <h4>Personalized Meal Planning</h4>
@@ -87,7 +87,7 @@ const Dashboard = () => {
                     borderRadius: '50%',
                     backgroundColor: '#e8f5e9'
                   }}>
-                    <FontAwesomeIcon icon={faCamera} style={{ fontSize: '30px', color: '#4caf50' }} />
+                    <FontAwesomeIcon icon={faCamera} style={{ fontSize: '30px', color: '#C51A1B' }} />
                   </div>
                   <div className="text">
                     <h4>Smart Food Tracking</h4>

@@ -17,7 +17,7 @@ const features = [
     description:
       "Snap a photo of your meal and let AI instantly identify ingredients, calculate nutrition, and log it automatically. No manual entry needed.",
     icon: faCamera,
-    color: "#4caf50",
+    color: "#C51A1B",
     bgColor: "#e8f5e9"
   },
   {
@@ -25,7 +25,7 @@ const features = [
     description:
       "Get personalized weekly meal plans based on your goals, preferences, and dietary needs. Planning your nutrition has never been easier.",
     icon: faCalendarAlt,
-    color: "#4A90E2",
+    color: "#75C5C1",
     bgColor: "#DBEAFE"
   },
   {

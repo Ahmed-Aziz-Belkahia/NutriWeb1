@@ -55,7 +55,7 @@ export default function BetaVerify() {
                       spin 
                       style={{ 
                         fontSize: '80px', 
-                        color: '#4A90E2', 
+                        color: '#75C5C1', 
                         marginBottom: '30px' 
                       }} 
                     />
@@ -118,11 +118,11 @@ export default function BetaVerify() {
                       border: '2px solid rgba(74, 144, 226, 0.1)'
                     }}>
                       <p style={{ 
-                        color: '#4A90E2', 
+                        color: '#75C5C1', 
                         margin: 0, 
                         fontSize: '16px' 
                       }}>
-                        If you're not redirected automatically, <Link to="/beta-ios-instructions" style={{ color: '#4A90E2', fontWeight: '600', textDecoration: 'underline' }}>click here</Link>
+                        If you're not redirected automatically, <Link to="/beta-ios-instructions" style={{ color: '#75C5C1', fontWeight: '600', textDecoration: 'underline' }}>click here</Link>
                       </p>
                     </div>
                   </>

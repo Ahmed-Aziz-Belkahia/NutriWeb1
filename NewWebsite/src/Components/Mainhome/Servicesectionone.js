@@ -58,7 +58,7 @@ const Servicesectionone = () => {
                     backgroundColor: '#DBEAFE'
                   }}>
                     {" "}
-                    <FontAwesomeIcon icon={faUtensils} style={{ fontSize: '30px', color: '#4A90E2' }} />{" "}
+                    <FontAwesomeIcon icon={faUtensils} style={{ fontSize: '30px', color: '#75C5C1' }} />{" "}
                   </span>
                   <h4>
                     <span>Personalized</span> meal planning
@@ -98,7 +98,7 @@ const Servicesectionone = () => {
                     backgroundColor: '#e8f5e9'
                   }}>
                     {" "}
-                    <FontAwesomeIcon icon={faCamera} style={{ fontSize: '30px', color: '#4caf50' }} />{" "}
+                    <FontAwesomeIcon icon={faCamera} style={{ fontSize: '30px', color: '#C51A1B' }} />{" "}
                   </span>
                   <h4>
                     <span>Smart</span> food tracking

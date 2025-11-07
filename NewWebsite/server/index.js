@@ -928,10 +928,10 @@ app.post('/api/beta-android-approve/:id', async (req, res) => {
           <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%); color: white; padding: 30px; text-align: center; border-radius: 10px; }
+            .header { background: linear-gradient(135deg, #C51A1B 0%, #45a049 100%); color: white; padding: 30px; text-align: center; border-radius: 10px; }
             .content { background: #f9f9f9; padding: 30px; border-radius: 10px; margin-top: 20px; }
-            .button { display: inline-block; background: #4CAF50; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 20px 0; }
-            .highlight { background: #E8F5E9; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #4CAF50; }
+            .button { display: inline-block; background: #C51A1B; color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 20px 0; }
+            .highlight { background: #E8F5E9; padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #C51A1B; }
           </style>
         </head>
         <body>

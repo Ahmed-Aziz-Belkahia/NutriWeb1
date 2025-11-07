@@ -85,7 +85,7 @@ export default function BetaIOS() {
                   marginBottom: '20px',
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: '#4A90E2'
+                  color: '#75C5C1'
                 }}>
                   <FontAwesomeIcon icon={faApple} />
                   <span>iOS Beta Testing</span>
@@ -109,7 +109,7 @@ export default function BetaIOS() {
                     padding: '20px',
                     marginBottom: '25px'
                   }}>
-                    <div style={{ color: '#4A90E2', fontWeight: '600', marginBottom: '8px', fontSize: '18px' }}>
+                    <div style={{ color: '#75C5C1', fontWeight: '600', marginBottom: '8px', fontSize: '18px' }}>
                       <span style={{ fontSize: '24px', marginRight: '8px' }}>🍎</span>
                       iOS TestFlight Beta
                     </div>
@@ -214,7 +214,7 @@ export default function BetaIOS() {
                   <div style={{
                     width: '80px',
                     height: '80px',
-                    background: '#4A90E2',
+                    background: '#75C5C1',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -267,10 +267,10 @@ export default function BetaIOS() {
                     onClick={() => setIsSubmitted(false)}
                     style={{
                       padding: '12px 24px',
-                      color: '#4A90E2',
+                      color: '#75C5C1',
                       fontWeight: '600',
                       background: 'transparent',
-                      border: '2px solid #4A90E2',
+                      border: '2px solid #75C5C1',
                       borderRadius: '25px',
                       cursor: 'pointer',
                       display: 'block',
@@ -278,12 +278,12 @@ export default function BetaIOS() {
                       transition: 'all 0.3s'
                     }}
                     onMouseOver={(e) => {
-                      e.target.style.background = '#4A90E2';
+                      e.target.style.background = '#75C5C1';
                       e.target.style.color = 'white';
                     }}
                     onMouseOut={(e) => {
                       e.target.style.background = 'transparent';
-                      e.target.style.color = '#4A90E2';
+                      e.target.style.color = '#75C5C1';
                     }}
                   >
                     Use a different email

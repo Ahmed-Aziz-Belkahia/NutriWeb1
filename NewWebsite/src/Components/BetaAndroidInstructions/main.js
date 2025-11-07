@@ -41,7 +41,7 @@ export default function BetaAndroidInstructions() {
                   marginBottom: '20px',
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: '#4CAF50'
+                  color: '#C51A1B'
                 }}>
                   <FontAwesomeIcon icon={faCheckCircle} />
                   <span>You're Approved!</span>
@@ -62,7 +62,7 @@ export default function BetaAndroidInstructions() {
                   <div style={{
                     width: '60px',
                     height: '60px',
-                    background: '#4CAF50',
+                    background: '#C51A1B',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -85,7 +85,7 @@ export default function BetaAndroidInstructions() {
                     justifyContent: 'center',
                     gap: '10px'
                   }}>
-                    <FontAwesomeIcon icon={faAndroid} style={{ color: '#4CAF50' }} />
+                    <FontAwesomeIcon icon={faAndroid} style={{ color: '#C51A1B' }} />
                     Join the Beta Program
                   </h2>
                   <p style={{ marginBottom: '25px', fontSize: '16px', lineHeight: '1.7', color: '#666' }}>
@@ -103,7 +103,7 @@ export default function BetaAndroidInstructions() {
                         gap: '10px',
                         padding: '15px 40px',
                         fontSize: '18px',
-                        background: '#4CAF50'
+                        background: '#C51A1B'
                       }}
                     >
                       <FontAwesomeIcon icon={faAndroid} />
@@ -119,7 +119,7 @@ export default function BetaAndroidInstructions() {
                   <div style={{
                     width: '60px',
                     height: '60px',
-                    background: '#4CAF50',
+                    background: '#C51A1B',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -157,7 +157,7 @@ export default function BetaAndroidInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4CAF50', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#C51A1B', marginRight: '10px' }}>✓</span>
                       Scan your meals and track nutrition
                     </li>
                     <li style={{ 
@@ -166,7 +166,7 @@ export default function BetaAndroidInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4CAF50', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#C51A1B', marginRight: '10px' }}>✓</span>
                       Create personalized meal plans
                     </li>
                     <li style={{ 
@@ -175,7 +175,7 @@ export default function BetaAndroidInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4CAF50', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#C51A1B', marginRight: '10px' }}>✓</span>
                       Generate recipes from ingredients
                     </li>
                     <li style={{ 
@@ -184,7 +184,7 @@ export default function BetaAndroidInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4CAF50', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#C51A1B', marginRight: '10px' }}>✓</span>
                       Track your body composition
                     </li>
                     <li style={{ 
@@ -192,7 +192,7 @@ export default function BetaAndroidInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4CAF50', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#C51A1B', marginRight: '10px' }}>✓</span>
                       Explore all premium features
                     </li>
                   </ul>
@@ -205,7 +205,7 @@ export default function BetaAndroidInstructions() {
                   <div style={{
                     width: '60px',
                     height: '60px',
-                    background: '#4CAF50',
+                    background: '#C51A1B',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -228,7 +228,7 @@ export default function BetaAndroidInstructions() {
                     justifyContent: 'center',
                     gap: '10px'
                   }}>
-                    <FontAwesomeIcon icon={faClipboardList} style={{ color: '#4CAF50' }} />
+                    <FontAwesomeIcon icon={faClipboardList} style={{ color: '#C51A1B' }} />
                     Share Your Feedback
                   </h2>
                   <p style={{ marginBottom: '25px', fontSize: '16px', lineHeight: '1.7', color: '#666' }}>
@@ -301,7 +301,7 @@ export default function BetaAndroidInstructions() {
                 <a 
                   href="mailto:support@nutriai.pl" 
                   style={{ 
-                    color: '#4CAF50', 
+                    color: '#C51A1B', 
                     fontWeight: '600',
                     fontSize: '18px',
                     textDecoration: 'none'

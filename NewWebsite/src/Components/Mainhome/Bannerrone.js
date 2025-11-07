@@ -43,7 +43,7 @@ const Bannerrone = () => {
                   <Typewriter
                     onInit={(typewriter) => {
                       typewriter
-                        .typeString('<span style="color: #4A90E2;"> Stay on top of your nutrition, without overthinking it. </span>')
+                        .typeString('<span style="color: #75C5C1;"> Stay on top of your nutrition, without overthinking it. </span>')
                         .pauseFor(2000)
                         .deleteAll()
                         .start()

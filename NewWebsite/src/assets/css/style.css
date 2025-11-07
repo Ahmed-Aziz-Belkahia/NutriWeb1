@@ -469,7 +469,7 @@ h6 {
 .dotes_anim_bloack .dotes_10::before {
   width: 9px;
   height: 9px;
-  background: #4A90E2;
+  background: #75C5C1;
   top: 0;
   left: 0;
 }
@@ -4267,7 +4267,7 @@ footer .bottom_footer .developer_text a {
 
 .whychoose_section .support_box{ 
     color: var(--white); 
-    background-color: #4A90E2; 
+    background-color: #75C5C1; 
     font-size: 14px; 
     padding: 34px 25px;
     border-radius: 28px;
@@ -4289,7 +4289,7 @@ footer .bottom_footer .developer_text a {
 
 .whychoose_section .choose_play{ 
     color: var(--white); 
-    background-color: #4A90E2; 
+    background-color: #75C5C1; 
     font-size: 14px; 
     padding: 15px; 
     border-radius: 28px;

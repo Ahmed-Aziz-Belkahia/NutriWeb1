@@ -85,7 +85,7 @@ export default function BetaAndroid() {
                   marginBottom: '20px',
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: '#4CAF50'
+                  color: '#C51A1B'
                 }}>
                   <FontAwesomeIcon icon={faAndroid} />
                   <span>Android Beta Testing</span>
@@ -109,7 +109,7 @@ export default function BetaAndroid() {
                     padding: '20px',
                     marginBottom: '25px'
                   }}>
-                    <div style={{ color: '#4CAF50', fontWeight: '600', marginBottom: '8px', fontSize: '18px' }}>
+                    <div style={{ color: '#C51A1B', fontWeight: '600', marginBottom: '8px', fontSize: '18px' }}>
                       <span style={{ fontSize: '24px', marginRight: '8px' }}>🤖</span>
                       Android Beta Access
                     </div>
@@ -188,7 +188,7 @@ export default function BetaAndroid() {
                         fontWeight: 'bold',
                         opacity: isLoading ? 0.5 : 1,
                         cursor: isLoading ? 'not-allowed' : 'pointer',
-                        background: '#4CAF50'
+                        background: '#C51A1B'
                       }}
                     >
                       {isLoading ? 'Processing...' : 'Apply for Beta Access'}
@@ -215,7 +215,7 @@ export default function BetaAndroid() {
                   <div style={{
                     width: '80px',
                     height: '80px',
-                    background: '#4CAF50',
+                    background: '#C51A1B',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -250,7 +250,7 @@ export default function BetaAndroid() {
                     borderRadius: '15px',
                     padding: '25px',
                     marginBottom: '25px',
-                    borderLeft: '4px solid #4CAF50'
+                    borderLeft: '4px solid #C51A1B'
                   }}>
                     <h3 style={{ 
                       fontWeight: '600', 
@@ -268,10 +268,10 @@ export default function BetaAndroid() {
                     onClick={() => setIsSubmitted(false)}
                     style={{
                       padding: '12px 24px',
-                      color: '#4CAF50',
+                      color: '#C51A1B',
                       fontWeight: '600',
                       background: 'transparent',
-                      border: '2px solid #4CAF50',
+                      border: '2px solid #C51A1B',
                       borderRadius: '25px',
                       cursor: 'pointer',
                       display: 'block',
@@ -279,12 +279,12 @@ export default function BetaAndroid() {
                       transition: 'all 0.3s'
                     }}
                     onMouseOver={(e) => {
-                      e.target.style.background = '#4CAF50';
+                      e.target.style.background = '#C51A1B';
                       e.target.style.color = 'white';
                     }}
                     onMouseOut={(e) => {
                       e.target.style.background = 'transparent';
-                      e.target.style.color = '#4CAF50';
+                      e.target.style.color = '#C51A1B';
                     }}
                   >
                     Use a different email

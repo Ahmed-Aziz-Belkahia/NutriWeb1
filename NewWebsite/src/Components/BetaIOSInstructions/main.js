@@ -42,7 +42,7 @@ export default function BetaIOSInstructions() {
                   marginBottom: '20px',
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: '#4A90E2'
+                  color: '#75C5C1'
                 }}>
                   <FontAwesomeIcon icon={faCheckCircle} />
                   <span>You're All Set!</span>
@@ -63,7 +63,7 @@ export default function BetaIOSInstructions() {
                   <div style={{
                     width: '60px',
                     height: '60px',
-                    background: '#4A90E2',
+                    background: '#75C5C1',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -86,7 +86,7 @@ export default function BetaIOSInstructions() {
                     justifyContent: 'center',
                     gap: '10px'
                   }}>
-                    <FontAwesomeIcon icon={faApple} style={{ color: '#4A90E2' }} />
+                    <FontAwesomeIcon icon={faApple} style={{ color: '#75C5C1' }} />
                     Download NutriAI
                   </h2>
                   <p style={{ marginBottom: '25px', fontSize: '16px', lineHeight: '1.7', color: '#666' }}>
@@ -119,7 +119,7 @@ export default function BetaIOSInstructions() {
                   <div style={{
                     width: '60px',
                     height: '60px',
-                    background: '#4A90E2',
+                    background: '#75C5C1',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -157,7 +157,7 @@ export default function BetaIOSInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4A90E2', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#75C5C1', marginRight: '10px' }}>✓</span>
                       Scan your meals and track nutrition
                     </li>
                     <li style={{ 
@@ -166,7 +166,7 @@ export default function BetaIOSInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4A90E2', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#75C5C1', marginRight: '10px' }}>✓</span>
                       Create personalized meal plans
                     </li>
                     <li style={{ 
@@ -175,7 +175,7 @@ export default function BetaIOSInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4A90E2', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#75C5C1', marginRight: '10px' }}>✓</span>
                       Generate recipes from ingredients
                     </li>
                     <li style={{ 
@@ -184,7 +184,7 @@ export default function BetaIOSInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4A90E2', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#75C5C1', marginRight: '10px' }}>✓</span>
                       Track your body composition
                     </li>
                     <li style={{ 
@@ -192,7 +192,7 @@ export default function BetaIOSInstructions() {
                       color: '#666',
                       fontSize: '16px'
                     }}>
-                      <span style={{ color: '#4A90E2', marginRight: '10px' }}>✓</span>
+                      <span style={{ color: '#75C5C1', marginRight: '10px' }}>✓</span>
                       Explore all premium features
                     </li>
                   </ul>
@@ -205,7 +205,7 @@ export default function BetaIOSInstructions() {
                   <div style={{
                     width: '60px',
                     height: '60px',
-                    background: '#4A90E2',
+                    background: '#75C5C1',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -228,7 +228,7 @@ export default function BetaIOSInstructions() {
                     justifyContent: 'center',
                     gap: '10px'
                   }}>
-                    <FontAwesomeIcon icon={faClipboardList} style={{ color: '#4A90E2' }} />
+                    <FontAwesomeIcon icon={faClipboardList} style={{ color: '#75C5C1' }} />
                     Share Your Feedback
                   </h2>
                   <p style={{ marginBottom: '25px', fontSize: '16px', lineHeight: '1.7', color: '#666' }}>
@@ -301,7 +301,7 @@ export default function BetaIOSInstructions() {
                 <a 
                   href="mailto:support@nutriai.pl" 
                   style={{ 
-                    color: '#4A90E2', 
+                    color: '#75C5C1', 
                     fontWeight: '600',
                     fontSize: '18px',
                     textDecoration: 'none'
