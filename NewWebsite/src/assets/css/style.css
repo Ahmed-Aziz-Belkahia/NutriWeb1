@@ -95,7 +95,6 @@ img {max-width: 100%}
     width: 100%;
     overflow-x: hidden;
 }
-style={{ paddingBottom: "33px" }}
 
 a {
     text-decoration: none;
