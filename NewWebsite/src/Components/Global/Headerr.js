@@ -19,14 +19,14 @@ const Main = () => {
     }
     window.addEventListener('scroll', fixedHeader)
   }, [])
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const toggleDropdown = (index) => {
-    setOpenDropdown(openDropdown === index ? null : index);
-  };
-  const [Dropdown, setDropdown] = useState(null);
-  const dropdown = (index) => {
-    setDropdown(Dropdown === index ? null : index);
-  };
+  // const [openDropdown, setOpenDropdown] = useState(null);
+  // const toggleDropdown = (index) => {
+  //   setOpenDropdown(openDropdown === index ? null : index);
+  // };
+  // const [Dropdown, setDropdown] = useState(null);
+  // const dropdown = (index) => {
+  //   setDropdown(Dropdown === index ? null : index);
+  // };
 
   return (
     <>
@@ -64,66 +64,16 @@ const Main = () => {
                     Beta
                   </Link>
                 </li>
-                <li className="nav-item has_dropdown">
-                  <Link className="nav-link" to="#" onClick={() => toggleDropdown(1)}>
-                    Pages
-                  </Link>
-                  <span className="drp_btn ">
-                    <i className="icofont-rounded-down" onClick={() => toggleDropdown(1)} />
-                  </span>
-                  {openDropdown === 1 && (
-                    <div className="sub_menu show">
-                      <ul>
-                        <li>
-                          <Link to="/about">About us</Link>
-                        </li>
-                        <li>
-                          <Link to="/contact">Contact us</Link>
-                        </li>
-                        <li>
-                          <Link to="/faq">Faq</Link>
-                        </li>
-                        <li>
-                          <Link to="/signin">Sign In</Link>
-                        </li>
-                        <li>
-                          <Link to="/signup">Sign Up</Link>
-                        </li>
-                        <li>
-                          <Link to="/bloglist">Blog List</Link>
-                        </li>
-                        <li>
-                          <Link to="/blogsingle">Blog Single</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
-                </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/pricing">
                     Pricing
                   </Link>
                 </li>
 
-                <li className="nav-item has_dropdown">
-                  <Link className="nav-link" to="#" onClick={() => toggleDropdown(1)}>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/bloglist">
                     Blog
                   </Link>
-                  <span className="drp_btn ">
-                    <i className="icofont-rounded-down" onClick={() => toggleDropdown(1)} />
-                  </span>
-                  {openDropdown === 1 && (
-                    <div className="sub_menu show">
-                      <ul>
-                        <li>
-                          <Link to="/bloglist">Blog List</Link>
-                        </li>
-                        <li>
-                          <Link to="/blogsingle">Blog Single</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/contact">
@@ -162,66 +112,16 @@ const Main = () => {
                     Beta
                   </Link>
                 </li>
-                <li className="nav-item has_dropdown">
-                  <Link className="nav-link" to="#" onClick={() => dropdown(1)}>
-                    Pages
-                  </Link>
-                  <span className="drp_btn ">
-                    <i className="icofont-rounded-down" onClick={() => dropdown(1)} />
-                  </span>
-                  {Dropdown === 1 && (
-                    <div className="sub_menu show">
-                      <ul>
-                        <li>
-                          <Link to="/about">About us</Link>
-                        </li>
-                        <li>
-                          <Link to="/contact">Contact us</Link>
-                        </li>
-                        <li>
-                          <Link to="/faq">Faq</Link>
-                        </li>
-                        <li>
-                          <Link to="/signin">Sign In</Link>
-                        </li>
-                        <li>
-                          <Link to="/signup">Sign Up</Link>
-                        </li>
-                        <li>
-                          <Link to="/bloglist">Blog List</Link>
-                        </li>
-                        <li>
-                          <Link to="/blogsingle">Blog Single</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
-                </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/pricing">
                     Pricing
                   </Link>
                 </li>
 
-                <li className="nav-item has_dropdown">
-                  <Link className="nav-link" to="#" onClick={() => toggleDropdown(1)}>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/bloglist">
                     Blog
                   </Link>
-                  <span className="drp_btn ">
-                    <i className="icofont-rounded-down" onClick={() => toggleDropdown(1)} />
-                  </span>
-                  {openDropdown === 1 && (
-                    <div className="sub_menu show">
-                      <ul>
-                        <li>
-                          <Link to="/bloglist">Blog List</Link>
-                        </li>
-                        <li>
-                          <Link to="/blogsingle">Blog Single</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/contact">

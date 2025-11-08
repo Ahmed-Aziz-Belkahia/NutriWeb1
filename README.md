@@ -55,7 +55,7 @@ project/
 │   │   ├── Features.tsx       # Features showcase
 │   │   ├── Contact.tsx        # Contact form
 │   │   ├── Beta.tsx           # 🆕 Beta signup page
-│   │   └── BetaAdmin.tsx      # 🆕 Admin dashboard
+│   │   └── beta-admin.tsx      # 🆕 Admin dashboard
 │   ├── components/            # Shared components
 │   │   └── Layout.tsx         # Navigation & footer
 │   └── App.tsx                # Router configuration
@@ -201,7 +201,7 @@ SMTP_USER=...
 3. Set `NODE_ENV=production`
 
 ### Before Launch
-- [ ] Change admin password in `BetaAdmin.tsx`
+- [ ] Change admin password in `beta-admin.tsx`
 - [ ] Set up Google Cloud service account
 - [ ] Configure Google Groups
 - [ ] Link to Play Console closed testing

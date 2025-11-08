@@ -45,7 +45,7 @@ const Index = () => {
       <Route path="/beta-verify" element={<BetaVerify />} />
       <Route path="/beta-ios-instructions" element={<BetaIOSInstructions />} />
       <Route path="/beta-android-instructions" element={<BetaAndroidInstructions />} />
-      <Route path="/beta-admin" element={<BetaAdmin />} />
+      <Route path="/betaadmin" element={<BetaAdmin />} />
     </Routes>
   );
 };

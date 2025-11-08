@@ -64,7 +64,7 @@ project/
 ├── src/                    # Frontend React app
 │   ├── pages/
 │   │   ├── Beta.tsx       # Beta signup page
-│   │   └── BetaAdmin.tsx  # Admin dashboard
+│   │   └── beta-admin.tsx  # Admin dashboard
 │   └── ...
 ├── server/                 # Backend Node.js API
 │   ├── index.js           # Express server
@@ -164,7 +164,7 @@ Beta testers are stored in `server/data/beta-testers.json`:
 
 ## 🔐 Change Admin Password
 
-Edit `src/pages/BetaAdmin.tsx`:
+Edit `src/pages/beta-admin.tsx`:
 
 ```typescript
 // Line 16
@@ -232,7 +232,7 @@ SMTP_PASS=your-mailgun-password
 
 **Important:** Update API URL in production:
 ```typescript
-// In Beta.tsx and BetaAdmin.tsx, change:
+// In Beta.tsx and beta-admin.tsx, change:
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 // Then use:

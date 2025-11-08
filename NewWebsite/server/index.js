@@ -350,7 +350,7 @@ async function sendAdminNotification(email, platform) {
               <span>${new Date().toLocaleString()}</span>
             </div>
             <center style="margin-top: 20px;">
-              <a href="https://nutriai.online/betaadmin" class="button">Review in Admin Panel →</a>
+              <a href="https://nutriai.online/beta-admin" class="button" style="color: white !important;">Review in Admin Panel →</a>
             </center>
           </div>
         </div>
@@ -772,7 +772,7 @@ app.post('/api/beta-ios-signup', async (req, res) => {
               <div class="highlight">
                 <h3>✅ Get Started Now:</h3>
                 <p style="text-align: center;">
-                  <a href="${instructionsLink}" class="button">View Instructions & Download App</a>
+                  <a href="${instructionsLink}" class="button" style="color: white !important;">View Instructions & Download App</a>
                 </p>
                 <p style="font-size: 14px; color: #666; margin-top: 20px;">
                   If the button doesn't work, copy and paste this link into your browser:<br>
@@ -802,6 +802,9 @@ app.post('/api/beta-ios-signup', async (req, res) => {
         html: htmlContent
       });
     }
+
+    // Send notification to admins
+    sendAdminNotification(email, 'ios').catch(console.error);
 
     res.json({ success: true, message: 'Registration successful', redirectTo: '/beta-ios-instructions' });
   } catch (error) {
@@ -890,6 +893,12 @@ app.post('/api/beta-android-signup', async (req, res) => {
     betaTesters.push(newTester);
     await saveData();
 
+    // Send confirmation email to user
+    await sendApplicationReceivedEmail(email, 'android');
+
+    // Send notification to admins
+    sendAdminNotification(email, 'android').catch(console.error);
+
     res.json({ success: true, message: 'Application submitted successfully' });
   } catch (error) {
     console.error('Error in Android beta signup:', error);
@@ -948,7 +957,7 @@ app.post('/api/beta-android-approve/:id', async (req, res) => {
               <div class="highlight">
                 <h3>✅ Get Started Now:</h3>
                 <p style="text-align: center;">
-                  <a href="${instructionsLink}" class="button">View Instructions & Download App</a>
+                  <a href="${instructionsLink}" class="button" style="color: white !important;">View Instructions & Download App</a>
                 </p>
                 <p style="font-size: 14px; color: #666; margin-top: 20px;">
                   If the button doesn't work, copy and paste this link into your browser:<br>

@@ -18,9 +18,12 @@ export default function BetaAndroid() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
     setError('');
     
+    // Show success page immediately
+    setIsSubmitted(true);
+    
+    // Send request in background
     try {
       const response = await fetch('/api/beta-android-signup', {
         method: 'POST',
@@ -31,6 +34,8 @@ export default function BetaAndroid() {
       const data = await response.json();
 
       if (!response.ok) {
+        // If there's an error, revert to form and show error
+        setIsSubmitted(false);
         if (response.status === 409) {
           setError('This email is already registered for Android beta testing!');
         } else {
@@ -39,13 +44,13 @@ export default function BetaAndroid() {
         return;
       }
 
-      setIsSubmitted(true);
+      // Clear email on success
       setEmail('');
     } catch (err) {
       console.error('Error submitting Android beta signup:', err);
+      // On network error, revert to form
+      setIsSubmitted(false);
       setError('Unable to connect to server. Please try again later.');
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -180,18 +185,15 @@ export default function BetaAndroid() {
                     <button
                       type="submit"
                       className="btn puprple_btn"
-                      disabled={isLoading}
                       style={{
                         width: '100%',
                         padding: '15px',
                         fontSize: '18px',
                         fontWeight: 'bold',
-                        opacity: isLoading ? 0.5 : 1,
-                        cursor: isLoading ? 'not-allowed' : 'pointer',
                         background: '#C51A1B'
                       }}
                     >
-                      {isLoading ? 'Processing...' : 'Apply for Beta Access'}
+                      Apply for Beta Access
                     </button>
 
                     <p style={{ 

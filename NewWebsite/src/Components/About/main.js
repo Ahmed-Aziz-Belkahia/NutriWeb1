@@ -6,10 +6,10 @@ import Ceomess from '../Mainabout/Ceomess'
 import Appsol from '../Mainabout/Appsol'
 import Vision from '../Mainabout/Vision'
 import Appsection from '../Mainabout/Appsection'
-import Testimonal from '../Global/Testimonal'
+// import Testimonal from '../Global/Testimonal'
 import Ourjourney from '../Mainabout/Ourjourney'
-import Introvideo from '../Mainabout/Introvideo'
-import Teamsection from '../Mainabout/Teamsection'
+// import Introvideo from '../Mainabout/Introvideo'
+// import Teamsection from '../Mainabout/Teamsection'
 import Downloadapp from '../Global/Downloadapp'
 import Cta from '../Global/Cta'
 import Footer from '../Global/Footer'
@@ -26,10 +26,10 @@ const main = () => {
       <Appsol/>
       <Vision/>
       <Appsection/>
-      <Testimonal/>
+      {/* <Testimonal/> */}
       <Ourjourney/>
-      <Introvideo/>
-      <Teamsection/>
+      {/* <Introvideo/> */}
+      {/* <Teamsection/> */}
       <Downloadapp/>
       <Cta/>
       <Footer/>

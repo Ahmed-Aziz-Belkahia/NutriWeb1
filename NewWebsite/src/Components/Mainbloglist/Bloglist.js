@@ -6,6 +6,10 @@ import { getFeaturedBlog } from "../../data/blogs";
 const Bloglist = () => {
   const featuredBlog = getFeaturedBlog();
   
+  if (!featuredBlog) {
+    return null; // Don't show the editor's choice section if no featured blog
+  }
+  
   return (
     <div>
       <section className="row_am blog_list_main">

@@ -167,7 +167,7 @@ project/
 ├── src/
 │   ├── pages/
 │   │   ├── Beta.tsx           # ✨ Beta signup page
-│   │   └── BetaAdmin.tsx      # 📊 Admin dashboard
+│   │   └── beta-admin.tsx      # 📊 Admin dashboard
 │   └── App.tsx                # Routes updated
 ├── server/
 │   ├── index.js               # 🚀 Express API server
@@ -188,7 +188,7 @@ project/
 
 ### Before Production:
 
-1. **Change admin password** in `src/pages/BetaAdmin.tsx`
+1. **Change admin password** in `src/pages/beta-admin.tsx`
 2. **Secure your .env** - Never commit to Git
 3. **Use HTTPS** for production API
 4. **Add rate limiting** to prevent spam

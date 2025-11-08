@@ -97,7 +97,7 @@
 **11. Frontend API Integration Fix**
 • Fixed hardcoded API URLs in Beta.tsx pointing to `http://nutriai.online:3001`
 • Updated to use relative path `/api/beta-testers` for proxy routing
-• Fixed BetaAdmin.tsx API endpoints to use `/api` proxy
+• Fixed beta-admin.tsx API endpoints to use `/api` proxy
 • Rebuilt React application with corrected endpoints (4.57s build time)
 • Redeployed updated dist/ files to production web server
 • Verified API proxy correctly forwards requests from frontend to backend
@@ -116,7 +116,7 @@
 
 **13. GitHub Version Control Integration**
 • Configured git user credentials for repository (support@nutriai.pl / NutriAI Deploy Bot)
-• Staged production-ready changes: Beta.tsx, BetaAdmin.tsx, server/index.js, server/package.json
+• Staged production-ready changes: Beta.tsx, beta-admin.tsx, server/index.js, server/package.json
 • Created comprehensive commit message documenting all API endpoint fixes
 • Committed changes with hash `ed1f2b3` (4 files, 357 insertions, 338 deletions)
 • Successfully pushed to GitHub main branch (Ahmed-Aziz-Belkahia/NutriWeb)
@@ -221,7 +221,7 @@
 - `/root/NutriWeb/server/index.js` - Backend server code (Android-only)
 - `/root/NutriWeb/server/data/beta-testers.json` - Database file (3 testers)
 - `/root/NutriWeb/src/pages/Beta.tsx` - Android-only signup page
-- `/root/NutriWeb/src/pages/BetaAdmin.tsx` - Fixed API endpoints
+- `/root/NutriWeb/src/pages/beta-admin.tsx` - Fixed API endpoints
 - `/etc/systemd/system/pm2-root.service` - PM2 auto-startup service
 - `/root/.pm2/dump.pm2` - PM2 process list
 - `/root/deploy-nutriweb.sh` - Automated deployment script

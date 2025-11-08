@@ -459,7 +459,7 @@ ufw enable
 
 ### 4. Change Admin Password
 
-Edit `BetaAdmin.tsx` before building to change the default password.
+Edit `beta-admin.tsx` before building to change the default password.
 
 ---
 

@@ -40,7 +40,7 @@ Deploy the NutriAI website with beta testing functionality to production on Open
 
 ### 5. **React Router Configuration**
 - ✅ Implemented proper rewrite rules for single-page application (SPA)
-- ✅ Fixed 404 errors when directly accessing routes like `/beta`, `/betaadmin`
+- ✅ Fixed 404 errors when directly accessing routes like `/beta`, `/beta-admin`
 - ✅ Added rules to exclude `/api` routes from rewrite
 - ✅ Created `.htaccess` file with proper React Router support
 
@@ -56,11 +56,11 @@ RewriteRule ^(.*)$ /index.html [L,QSA]
 - ✅ Fixed API routing issues
 - ✅ Configured OpenLiteSpeed to proxy `/api` requests to `localhost:3001`
 - ✅ Updated all frontend API calls to use relative paths (`/api/...`)
-- ✅ Fixed both `Beta.tsx` and `BetaAdmin.tsx` to use proxy
+- ✅ Fixed both `Beta.tsx` and `beta-admin.tsx` to use proxy
 
 **Fixed Files:**
 - `src/pages/Beta.tsx` - Beta signup form API calls
-- `src/pages/BetaAdmin.tsx` - Admin panel API calls
+- `src/pages/beta-admin.tsx` - Admin panel API calls
 
 ### 7. **Email System Configuration**
 - ✅ Configured SMTP with Gmail (support@nutriai.pl)
@@ -200,7 +200,7 @@ curl https://nutriai.online/api/beta-testers
 
 - **Homepage:** https://nutriai.online
 - **Beta Signup:** https://nutriai.online/beta
-- **Admin Panel:** https://nutriai.online/betaadmin
+- **Admin Panel:** https://nutriai.online/beta-admin
 - **Features:** https://nutriai.online/features
 - **About:** https://nutriai.online/about
 - **Contact:** https://nutriai.online/contact
@@ -281,7 +281,7 @@ curl https://nutriai.online/api/beta-testers
    ```
 
 ### Security
-- Admin password is hardcoded in BetaAdmin.tsx (consider moving to backend)
+- Admin password is hardcoded in beta-admin.tsx (consider moving to backend)
 - Beta tester data stored in JSON file (consider moving to database)
 - Email password visible in .env (ensure proper file permissions)
 

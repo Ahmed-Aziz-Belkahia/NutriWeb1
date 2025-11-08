@@ -17,7 +17,7 @@ interface AdminSettings {
   notificationEmails: string[];
 }
 
-export default function BetaAdmin() {
+export default function beta-admin() {
   const [testers, setTesters] = useState<BetaTester[]>([]);
   const [password, setPassword] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);

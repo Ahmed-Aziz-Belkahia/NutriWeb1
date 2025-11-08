@@ -445,7 +445,7 @@ async function sendAdminNotification(email, platform) {
               <span>${new Date().toLocaleString()}</span>
             </div>
             <center style="margin-top: 20px;">
-              <a href="https://nutriai.online/betaadmin" class="button">Review in Admin Panel →</a>
+              <a href="https://nutriai.online/beta-admin" class="button">Review in Admin Panel →</a>
             </center>
           </div>
         </div>

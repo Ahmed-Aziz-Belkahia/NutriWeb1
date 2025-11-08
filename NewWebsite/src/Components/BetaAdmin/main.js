@@ -116,12 +116,13 @@ export default function BetaAdmin() {
 
   const exportToCSV = () => {
     const csv = [
-      ['Email', 'Platform', 'Status', 'Created At'],
+      ['Email', 'Platform', 'Status', 'Applied At', 'Approved At'],
       ...testers.map(t => [
         t.email,
         t.platform,
         t.status,
-        new Date(t.createdAt).toLocaleString()
+        new Date(t.submittedAt || t.createdAt).toLocaleString(),
+        t.approvedAt ? new Date(t.approvedAt).toLocaleString() : '-'
       ])
     ].map(row => row.join(','))
       .join('\n');
@@ -817,7 +818,7 @@ export default function BetaAdmin() {
                   <th style={{ textAlign: 'left', padding: '0.75rem 1rem', fontWeight: 600, color: '#374151' }}>Platform</th>
                   <th style={{ textAlign: 'left', padding: '0.75rem 1rem', fontWeight: 600, color: '#374151' }}>Status</th>
                   <th style={{ textAlign: 'left', padding: '0.75rem 1rem', fontWeight: 600, color: '#374151' }}>Email Sent</th>
-                  <th style={{ textAlign: 'left', padding: '0.75rem 1rem', fontWeight: 600, color: '#374151' }}>Applied</th>
+                  <th style={{ textAlign: 'left', padding: '0.75rem 1rem', fontWeight: 600, color: '#374151' }}>Date</th>
                   <th style={{ textAlign: 'right', padding: '0.75rem 1rem', fontWeight: 600, color: '#374151' }}>Actions</th>
                 </tr>
               </thead>
@@ -877,7 +878,10 @@ export default function BetaAdmin() {
                         )}
                       </td>
                       <td style={{ padding: '0.75rem 1rem', fontSize: '0.875rem', color: '#6b7280' }}>
-                        {new Date(tester.createdAt).toLocaleString()}
+                        {tester.approvedAt 
+                          ? new Date(tester.approvedAt).toLocaleString()
+                          : new Date(tester.submittedAt || tester.createdAt).toLocaleString()
+                        }
                       </td>
                       <td style={{ padding: '0.75rem 1rem' }}>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '0.5rem' }}>

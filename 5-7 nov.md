@@ -244,7 +244,7 @@ Successfully implemented a complete dual-platform beta testing system for NutriA
 - `NewWebsite/src/Components/Beta/main.js` (platform selection)
 
 ### Modified Components
-- `NewWebsite/src/Components/BetaAdmin/main.js` - Dual-platform support
+- `NewWebsite/src/Components/beta-admin/main.js` - Dual-platform support
 - `NewWebsite/src/Components/Mainhome/Bannerrone.js` - Button routing
 - `NewWebsite/src/Components/Global/Footer.js` - Credits update
 - `NewWebsite/src/router/index.js` - New route definitions

@@ -58,13 +58,13 @@
 /* -----------Css-variable------ */
 
 :root {
-    --primary: #75C5C1;
+    --primary: #75C5C1;         
     --secondary: #102A63;
     --body-text: #3e3f66;
     --white: #ffffff;
     --lighter1: #E8F5F4;
     --lighter2: #C9EEEB;
-    --lighter3:#A8E3DF;
+    --lighter3:#A8E3DF;     
     --purplishgray:#C9EEEB;
     --border:#75C5C1;
     --slider-dots-color: #A8E3DF;
@@ -819,8 +819,15 @@ header.fixed .navbar {
     margin-top: -1px;
 }
 
-.navbar .btn.puprple_btn {
+.navbar .btn.puprple_btn,
+header .btn.puprple_btn {
 	margin-left: 20px;
+	background-color: #75C5C1 !important;
+}
+
+.navbar .btn.puprple_btn:hover,
+header .btn.puprple_btn:hover {
+	color: #75C5C1 !important;
 }
 
 /* navigation toggle menu */
@@ -5449,6 +5456,8 @@ footer .top_footer .social_media{
 .our_journey .timeline_box .timeline_img {
 	width: 175px; 
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
 
 .our_journey .timeline_box .timeline_img img{

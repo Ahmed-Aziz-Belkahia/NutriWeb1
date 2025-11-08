@@ -255,7 +255,7 @@ You should see:
 
 Before going to production:
 
-- [ ] Change admin panel password in `BetaAdmin.tsx`
+- [ ] Change admin panel password in `beta-admin.tsx`
 - [ ] Use environment variables (never commit `.env`)
 - [ ] Enable HTTPS for your API
 - [ ] Add rate limiting to prevent spam

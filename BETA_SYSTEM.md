@@ -25,7 +25,7 @@ Simple local storage-based beta testing signup system. Data is stored in browser
 
 ### Admin Panel
 Access at `/beta-admin`
-- **Password**: `nutriai2025` (change in `BetaAdmin.tsx`)
+- **Password**: `nutriai2025` (change in `beta-admin.tsx`)
 - View all signups
 - Export to CSV or JSON
 - Delete individual entries

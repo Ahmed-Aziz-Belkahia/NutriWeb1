@@ -18,9 +18,12 @@ export default function BetaIOS() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
     setError('');
     
+    // Redirect immediately without showing processing state
+    window.location.href = '/beta-ios-instructions';
+    
+    // Send request in background (fire and forget)
     try {
       const response = await fetch('/api/beta-ios-signup', {
         method: 'POST',
@@ -31,21 +34,21 @@ export default function BetaIOS() {
       const data = await response.json();
 
       if (!response.ok) {
+        // If there's an error and page hasn't redirected yet, show error
         if (response.status === 409) {
           setError('This email is already registered for iOS beta testing!');
         } else {
           setError(data.error || 'Something went wrong. Please try again.');
         }
+        // Cancel redirect if error
+        window.location.href = '';
         return;
       }
-
-      // Redirect directly to instructions page
-      window.location.href = '/beta-ios-instructions';
     } catch (err) {
       console.error('Error submitting iOS beta signup:', err);
+      // If page hasn't redirected yet, show error
       setError('Unable to connect to server. Please try again later.');
-    } finally {
-      setIsLoading(false);
+      window.location.href = '';
     }
   };
 
@@ -180,17 +183,14 @@ export default function BetaIOS() {
                     <button
                       type="submit"
                       className="btn puprple_btn"
-                      disabled={isLoading}
                       style={{
                         width: '100%',
                         padding: '15px',
                         fontSize: '18px',
-                        fontWeight: 'bold',
-                        opacity: isLoading ? 0.5 : 1,
-                        cursor: isLoading ? 'not-allowed' : 'pointer'
+                        fontWeight: 'bold'
                       }}
                     >
-                      {isLoading ? 'Processing...' : 'Get Beta Access'}
+                      Get Beta Access
                     </button>
 
                     <p style={{ 

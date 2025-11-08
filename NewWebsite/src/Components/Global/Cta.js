@@ -35,7 +35,7 @@ const Cta = () => {
           
           <h3>Need support?</h3>
         
-          <p>Lorem Ipsum is simply dummy text of the printing.</p>
+          <p>Our team is here to help you. Reach out anytime for assistance.</p>
         </div>
       </div>
       <div className="right">
