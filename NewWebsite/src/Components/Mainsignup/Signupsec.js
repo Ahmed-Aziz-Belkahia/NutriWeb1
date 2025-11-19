@@ -67,7 +67,7 @@ const Signupsec = () => {
                     <div className="coustome_checkbox">
                       <label htmlFor="remamber_check">
                         <input type="checkbox" id="remamber_check" />
-                        <span className="checkmark" />I agree to all Term, Privacy and
+                        <span className="checkmark" />I agree to all Term, <Link to="/privacy">Privacy</Link> and
                         Fees
                       </label>
                     </div>

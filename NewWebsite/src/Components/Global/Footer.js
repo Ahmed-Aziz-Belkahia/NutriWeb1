@@ -80,7 +80,7 @@ const Footer = () => {
                 <Link to="#">Terms &amp; conditions</Link>
               </li>
               <li>
-                <Link to="#">Privacy policy</Link>
+                <Link to="/privacy">Privacy policy</Link>
               </li>
             </ul>
           </div>
