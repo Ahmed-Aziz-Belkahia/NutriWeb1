@@ -19,6 +19,7 @@ import BetaIOSInstructions from "../Components/BetaIOSInstructions/main";
 import BetaAndroid from "../Components/BetaAndroid/main";
 import BetaAndroidInstructions from "../Components/BetaAndroidInstructions/main";
 import Privacy from "../Components/Privacy/main";
+import Terms from "../Components/Terms/main";
 
 
 const Index = () => {
@@ -48,6 +49,7 @@ const Index = () => {
       <Route path="/beta-android-instructions" element={<BetaAndroidInstructions />} />
       <Route path="/betaadmin" element={<BetaAdmin />} />
       <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
     </Routes>
   );
 };
