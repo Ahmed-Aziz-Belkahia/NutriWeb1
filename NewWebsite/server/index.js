@@ -31,11 +31,16 @@ try {
 
 // Load admin settings
 try {
-  const settingsData = await fs.readFile('./data/admin-settings.json', 'utf-8');
+  const settingsPath = './data/admin-settings.json';
+  console.log(`[STARTUP] Attempting to load admin settings from: ${settingsPath}`);
+  console.log(`[STARTUP] Current working directory: ${process.cwd()}`);
+  const settingsData = await fs.readFile(settingsPath, 'utf-8');
+  console.log(`[STARTUP] Raw settings data: ${settingsData}`);
   adminSettings = JSON.parse(settingsData);
-  console.log(`Loaded admin settings with ${adminSettings.notificationEmails?.length || 0} notification emails`);
+  console.log(`[STARTUP] Parsed admin settings:`, JSON.stringify(adminSettings));
+  console.log(`[STARTUP] Loaded admin settings with ${adminSettings.notificationEmails?.length || 0} notification emails:`, adminSettings.notificationEmails);
 } catch (error) {
-  console.log('No admin settings found, using defaults');
+  console.log('[STARTUP] No admin settings found, using defaults. Error:', error.message);
 }
 
 // Save data helper
@@ -51,10 +56,18 @@ async function saveData() {
 // Save admin settings helper
 async function saveAdminSettings() {
   try {
-    await fs.mkdir('./data', { recursive: true });
-    await fs.writeFile('./data/admin-settings.json', JSON.stringify(adminSettings, null, 2));
+    const dataDir = './data';
+    const filePath = './data/admin-settings.json';
+    console.log(`[SAVE] Saving admin settings to: ${filePath}`);
+    console.log(`[SAVE] Data to save:`, JSON.stringify(adminSettings));
+    await fs.mkdir(dataDir, { recursive: true });
+    await fs.writeFile(filePath, JSON.stringify(adminSettings, null, 2));
+    console.log(`[SAVE] Successfully saved admin settings`);
+    // Verify the save by reading back
+    const verifyData = await fs.readFile(filePath, 'utf-8');
+    console.log(`[SAVE] Verification - file contents: ${verifyData}`);
   } catch (error) {
-    console.error('Error saving admin settings:', error);
+    console.error('[SAVE] Error saving admin settings:', error);
   }
 }
 
@@ -487,15 +500,22 @@ app.post('/api/contact', async (req, res) => {
 
 // Get admin settings
 app.get('/api/admin-settings', (req, res) => {
+  console.log('[API] GET /api/admin-settings called');
+  console.log('[API] Current adminSettings in memory:', JSON.stringify(adminSettings));
+  console.log('[API] Notification emails count:', adminSettings.notificationEmails?.length || 0);
   res.json(adminSettings);
 });
 
 // Update admin notification emails
 app.put('/api/admin-settings/notification-emails', async (req, res) => {
+  console.log('[API] PUT /api/admin-settings/notification-emails called');
+  console.log('[API] Request body:', JSON.stringify(req.body));
   try {
     const { emails } = req.body;
+    console.log('[API] Emails to save:', emails);
 
     if (!Array.isArray(emails)) {
+      console.log('[API] Error: emails is not an array');
       return res.status(400).json({ error: 'Emails must be an array' });
     }
 
@@ -504,6 +524,7 @@ app.put('/api/admin-settings/notification-emails', async (req, res) => {
     const invalidEmails = emails.filter(email => !emailRegex.test(email));
     
     if (invalidEmails.length > 0) {
+      console.log('[API] Invalid emails found:', invalidEmails);
       return res.status(400).json({ 
         error: 'Invalid email format', 
         invalidEmails 
@@ -511,14 +532,16 @@ app.put('/api/admin-settings/notification-emails', async (req, res) => {
     }
 
     adminSettings.notificationEmails = emails;
+    console.log('[API] Updated adminSettings in memory:', JSON.stringify(adminSettings));
     await saveAdminSettings();
+    console.log('[API] Saved admin settings to file');
 
     res.json({ 
       success: true, 
       notificationEmails: adminSettings.notificationEmails 
     });
   } catch (error) {
-    console.error('Error updating admin settings:', error);
+    console.error('[API] Error updating admin settings:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

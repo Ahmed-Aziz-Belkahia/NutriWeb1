@@ -32,11 +32,13 @@ export default function BetaAdmin() {
   const ADMIN_PASSWORD = 'nutriai2025';
 
   useEffect(() => {
+    console.log('[FRONTEND] useEffect triggered, isAuthenticated:', isAuthenticated);
     if (isAuthenticated) {
+      console.log('[FRONTEND] User is authenticated, loading data...');
       loadTesters();
       loadAdminSettings();
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, loadAdminSettings]);
 
   const loadTesters = async () => {
     try {
@@ -51,22 +53,34 @@ export default function BetaAdmin() {
   };
 
   const loadAdminSettings = useCallback(async () => {
+    console.log('[FRONTEND] loadAdminSettings called');
     setSettingsLoading(true);
     try {
+      console.log('[FRONTEND] Fetching /api/admin-settings...');
       const response = await fetch('/api/admin-settings');
+      console.log('[FRONTEND] Response status:', response.status);
+      console.log('[FRONTEND] Response ok:', response.ok);
       if (response.ok) {
         const data = await response.json();
-        console.log('Loaded admin settings:', data);
+        console.log('[FRONTEND] Raw response data:', JSON.stringify(data));
+        console.log('[FRONTEND] notificationEmails:', data?.notificationEmails);
+        console.log('[FRONTEND] notificationEmails length:', data?.notificationEmails?.length);
         if (data && data.notificationEmails) {
+          console.log('[FRONTEND] Setting adminSettings state with:', data.notificationEmails);
           setAdminSettings({ notificationEmails: data.notificationEmails });
+        } else {
+          console.log('[FRONTEND] No notificationEmails in response data');
         }
       } else {
-        console.error('Failed to load admin settings:', response.status);
+        console.error('[FRONTEND] Failed to load admin settings:', response.status);
+        const errorText = await response.text();
+        console.error('[FRONTEND] Error response:', errorText);
       }
     } catch (error) {
-      console.error('Error loading admin settings:', error);
+      console.error('[FRONTEND] Error loading admin settings:', error);
     } finally {
       setSettingsLoading(false);
+      console.log('[FRONTEND] loadAdminSettings completed');
     }
   }, []);
 
