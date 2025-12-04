@@ -47,8 +47,17 @@ export default function BetaAdmin() {
     console.log('[FRONTEND] loadAdminSettings called');
     setSettingsLoading(true);
     try {
-      console.log('[FRONTEND] Fetching /api/admin-settings...');
-      const response = await fetch('/api/admin-settings');
+      // Add cache-busting query parameter
+      const url = `/api/admin-settings?_t=${Date.now()}`;
+      console.log('[FRONTEND] Fetching:', url);
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      });
       console.log('[FRONTEND] Response status:', response.status);
       console.log('[FRONTEND] Response ok:', response.ok);
       if (response.ok) {
