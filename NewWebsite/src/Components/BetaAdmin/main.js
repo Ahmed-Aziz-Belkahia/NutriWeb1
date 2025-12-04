@@ -31,16 +31,7 @@ export default function BetaAdmin() {
   // Simple password protection
   const ADMIN_PASSWORD = 'nutriai2025';
 
-  useEffect(() => {
-    console.log('[FRONTEND] useEffect triggered, isAuthenticated:', isAuthenticated);
-    if (isAuthenticated) {
-      console.log('[FRONTEND] User is authenticated, loading data...');
-      loadTesters();
-      loadAdminSettings();
-    }
-  }, [isAuthenticated, loadAdminSettings]);
-
-  const loadTesters = async () => {
+  const loadTesters = useCallback(async () => {
     try {
       const response = await fetch('/api/beta-testers');
       if (response.ok) {
@@ -50,7 +41,7 @@ export default function BetaAdmin() {
     } catch (error) {
       console.error('Error loading testers:', error);
     }
-  };
+  }, []);
 
   const loadAdminSettings = useCallback(async () => {
     console.log('[FRONTEND] loadAdminSettings called');
@@ -83,6 +74,15 @@ export default function BetaAdmin() {
       console.log('[FRONTEND] loadAdminSettings completed');
     }
   }, []);
+
+  useEffect(() => {
+    console.log('[FRONTEND] useEffect triggered, isAuthenticated:', isAuthenticated);
+    if (isAuthenticated) {
+      console.log('[FRONTEND] User is authenticated, loading data...');
+      loadTesters();
+      loadAdminSettings();
+    }
+  }, [isAuthenticated, loadTesters, loadAdminSettings]);
 
   const addAdminEmail = async () => {
     if (!newAdminEmail) return;
