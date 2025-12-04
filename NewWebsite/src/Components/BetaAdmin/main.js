@@ -44,12 +44,10 @@ export default function BetaAdmin() {
   }, []);
 
   const loadAdminSettings = useCallback(async () => {
-    console.log('[FRONTEND] loadAdminSettings called');
     setSettingsLoading(true);
     try {
-      // Add cache-busting query parameter
+      // Add cache-busting query parameter to prevent caching issues
       const url = `/api/admin-settings?_t=${Date.now()}`;
-      console.log('[FRONTEND] Fetching:', url);
       const response = await fetch(url, {
         method: 'GET',
         headers: {
@@ -58,36 +56,23 @@ export default function BetaAdmin() {
           'Expires': '0'
         }
       });
-      console.log('[FRONTEND] Response status:', response.status);
-      console.log('[FRONTEND] Response ok:', response.ok);
       if (response.ok) {
         const data = await response.json();
-        console.log('[FRONTEND] Raw response data:', JSON.stringify(data));
-        console.log('[FRONTEND] notificationEmails:', data?.notificationEmails);
-        console.log('[FRONTEND] notificationEmails length:', data?.notificationEmails?.length);
         if (data && data.notificationEmails) {
-          console.log('[FRONTEND] Setting adminSettings state with:', data.notificationEmails);
           setAdminSettings({ notificationEmails: data.notificationEmails });
-        } else {
-          console.log('[FRONTEND] No notificationEmails in response data');
         }
       } else {
-        console.error('[FRONTEND] Failed to load admin settings:', response.status);
-        const errorText = await response.text();
-        console.error('[FRONTEND] Error response:', errorText);
+        console.error('Failed to load admin settings:', response.status);
       }
     } catch (error) {
-      console.error('[FRONTEND] Error loading admin settings:', error);
+      console.error('Error loading admin settings:', error);
     } finally {
       setSettingsLoading(false);
-      console.log('[FRONTEND] loadAdminSettings completed');
     }
   }, []);
 
   useEffect(() => {
-    console.log('[FRONTEND] useEffect triggered, isAuthenticated:', isAuthenticated);
     if (isAuthenticated) {
-      console.log('[FRONTEND] User is authenticated, loading data...');
       loadTesters();
       loadAdminSettings();
     }
