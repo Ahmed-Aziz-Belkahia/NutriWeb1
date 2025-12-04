@@ -16,6 +16,14 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// Disable caching for API routes
+app.use('/api', (req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  next();
+});
+
 // In-memory storage (replace with database in production)
 let betaTesters = [];
 let adminSettings = { notificationEmails: [] };
