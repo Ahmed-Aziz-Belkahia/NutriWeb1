@@ -8,13 +8,17 @@ import {
   faCheckCircle, 
   faTimesCircle, 
   faClock, 
-  faEnvelope 
+  faEnvelope,
+  faSignOutAlt
 } from '@fortawesome/free-solid-svg-icons';
 
 export default function BetaAdmin() {
   const [testers, setTesters] = useState([]);
   const [password, setPassword] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    // Check if already authenticated in this session
+    return sessionStorage.getItem('nutriai_admin_auth') === 'true';
+  });
   const [filter, setFilter] = useState('all');
   const [selectedIds, setSelectedIds] = useState([]);
   const [rejectionReason, setRejectionReason] = useState('');
@@ -117,10 +121,17 @@ export default function BetaAdmin() {
   const handleLogin = (e) => {
     e.preventDefault();
     if (password === ADMIN_PASSWORD) {
+      sessionStorage.setItem('nutriai_admin_auth', 'true');
       setIsAuthenticated(true);
     } else {
       alert('Incorrect password');
     }
+  };
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('nutriai_admin_auth');
+    setIsAuthenticated(false);
+    setPassword('');
   };
 
   const exportToCSV = () => {
@@ -435,23 +446,47 @@ export default function BetaAdmin() {
                 Total signups: <span style={{ fontWeight: 600, color: '#0ea5e9' }}>{testers.length}</span>
               </p>
             </div>
-            <button
-              onClick={loadTesters}
-              title="Refresh"
-              style={{
-                padding: '0.75rem',
-                background: '#eff6ff',
-                color: '#0ea5e9',
-                borderRadius: '1rem',
-                border: 'none',
-                cursor: 'pointer',
-                transition: 'background 0.2s',
-              }}
-              onMouseEnter={(e) => e.target.style.background = '#dbeafe'}
-              onMouseLeave={(e) => e.target.style.background = '#eff6ff'}
-            >
-              <FontAwesomeIcon icon={faSync} style={{ width: '1.25rem', height: '1.25rem' }} />
-            </button>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <button
+                onClick={loadTesters}
+                title="Refresh"
+                style={{
+                  padding: '0.75rem',
+                  background: '#eff6ff',
+                  color: '#0ea5e9',
+                  borderRadius: '1rem',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s',
+                }}
+                onMouseEnter={(e) => e.target.style.background = '#dbeafe'}
+                onMouseLeave={(e) => e.target.style.background = '#eff6ff'}
+              >
+                <FontAwesomeIcon icon={faSync} style={{ width: '1.25rem', height: '1.25rem' }} />
+              </button>
+              <button
+                onClick={handleLogout}
+                title="Logout"
+                style={{
+                  padding: '0.75rem 1rem',
+                  background: '#fef2f2',
+                  color: '#ef4444',
+                  borderRadius: '1rem',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  fontWeight: 500,
+                }}
+                onMouseEnter={(e) => e.target.style.background = '#fee2e2'}
+                onMouseLeave={(e) => e.target.style.background = '#fef2f2'}
+              >
+                <FontAwesomeIcon icon={faSignOutAlt} style={{ width: '1rem', height: '1rem' }} />
+                Logout
+              </button>
+            </div>
           </div>
 
           {/* Stats Cards */}
