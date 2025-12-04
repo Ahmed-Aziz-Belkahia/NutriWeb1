@@ -50,7 +50,10 @@ export default function BetaAdmin() {
       const response = await fetch('/api/admin-settings');
       if (response.ok) {
         const data = await response.json();
-        setAdminSettings(data);
+        console.log('Loaded admin settings:', data);
+        setAdminSettings(data || { notificationEmails: [] });
+      } else {
+        console.error('Failed to load admin settings:', response.status);
       }
     } catch (error) {
       console.error('Error loading admin settings:', error);
@@ -93,7 +96,7 @@ export default function BetaAdmin() {
 
       if (response.ok) {
         const data = await response.json();
-        setAdminSettings({ notificationEmails: data.notificationEmails });
+        setAdminSettings(prev => ({ ...prev, notificationEmails: data.notificationEmails }));
         alert('✅ Admin notification settings updated!');
       } else {
         const data = await response.json();
