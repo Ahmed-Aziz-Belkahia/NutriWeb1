@@ -33,7 +33,16 @@ export default function BetaAdmin() {
 
   const loadTesters = useCallback(async () => {
     try {
-      const response = await fetch('/api/beta-testers');
+      // Add cache-busting query parameter to prevent caching issues
+      const url = `/api/beta-testers?_t=${Date.now()}`;
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
+          'Expires': '0'
+        }
+      });
       if (response.ok) {
         const data = await response.json();
         setTesters(data);
