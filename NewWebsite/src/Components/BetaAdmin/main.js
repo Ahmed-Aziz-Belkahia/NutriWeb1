@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faUsers, 
@@ -22,6 +22,7 @@ export default function BetaAdmin() {
   const [adminSettings, setAdminSettings] = useState({ notificationEmails: [] });
   const [showSettings, setShowSettings] = useState(false);
   const [newAdminEmail, setNewAdminEmail] = useState('');
+  const [settingsLoading, setSettingsLoading] = useState(false);
 
   // Simple password protection
   const ADMIN_PASSWORD = 'nutriai2025';
@@ -45,20 +46,25 @@ export default function BetaAdmin() {
     }
   };
 
-  const loadAdminSettings = async () => {
+  const loadAdminSettings = useCallback(async () => {
+    setSettingsLoading(true);
     try {
       const response = await fetch('/api/admin-settings');
       if (response.ok) {
         const data = await response.json();
         console.log('Loaded admin settings:', data);
-        setAdminSettings(data || { notificationEmails: [] });
+        if (data && data.notificationEmails) {
+          setAdminSettings({ notificationEmails: data.notificationEmails });
+        }
       } else {
         console.error('Failed to load admin settings:', response.status);
       }
     } catch (error) {
       console.error('Error loading admin settings:', error);
+    } finally {
+      setSettingsLoading(false);
     }
-  };
+  }, []);
 
   const addAdminEmail = async () => {
     if (!newAdminEmail) return;
@@ -580,9 +586,37 @@ export default function BetaAdmin() {
                   >
                     Add
                   </button>
+                  <button
+                    onClick={loadAdminSettings}
+                    disabled={settingsLoading}
+                    style={{
+                      padding: '0.5rem 1rem',
+                      background: 'white',
+                      color: '#f97316',
+                      fontWeight: 600,
+                      borderRadius: '0.75rem',
+                      border: '2px solid #fed7aa',
+                      cursor: 'pointer',
+                      transition: 'background 0.2s',
+                    }}
+                    onMouseEnter={(e) => e.target.style.background = '#fff7ed'}
+                    onMouseLeave={(e) => e.target.style.background = 'white'}
+                  >
+                    <FontAwesomeIcon icon={faSync} spin={settingsLoading} />
+                  </button>
                 </div>
 
-                {adminSettings.notificationEmails.length === 0 ? (
+                {settingsLoading ? (
+                  <div style={{
+                    textAlign: 'center',
+                    padding: '1rem',
+                    color: '#6b7280',
+                    background: 'white',
+                    borderRadius: '0.75rem',
+                  }}>
+                    Loading...
+                  </div>
+                ) : adminSettings.notificationEmails.length === 0 ? (
                   <div style={{
                     textAlign: 'center',
                     padding: '1rem',
