@@ -85,7 +85,8 @@ export default function BetaAdmin() {
       loadTesters();
       loadAdminSettings();
     }
-  }, [isAuthenticated, loadTesters, loadAdminSettings]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuthenticated]);
 
   const addAdminEmail = async () => {
     if (!newAdminEmail) return;
