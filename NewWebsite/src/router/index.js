@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Home from "../Components/Home/main";
 import Features from "../Components/Features/main";
 import About from "../Components/About/main";
@@ -50,6 +50,7 @@ const Index = () => {
       <Route path="/beta-admin" element={<BetaAdmin />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/web-onboarding" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };
