@@ -5,7 +5,7 @@ import About from './pages/About';
 import Features from './pages/Features';
 import Contact from './pages/Contact';
 import Beta from './pages/Beta';
-import beta-admin from './pages/beta-admin';
+import BetaAdmin from './pages/BetaAdmin';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="/features" element={<Features />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/beta" element={<Beta />} />
-          <Route path="/beta-admin" element={<beta-admin />} />
+          <Route path="/beta-admin" element={<BetaAdmin />} />
         </Routes>
       </Layout>
     </Router>
