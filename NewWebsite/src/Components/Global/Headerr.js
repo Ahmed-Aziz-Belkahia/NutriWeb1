@@ -1,36 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Header_logo from "../../assets/images/logo.png";
 
 const Main = () => {
 
-  const [headerScroll, setheaderScroll] = useState(false)
   const [mobile, setmobile] = useState()
-
-
-  useEffect(() => {
-
-    const fixedHeader = () => {
-      if (window.pageYOffset > 150) {
-        setheaderScroll(true)
-      } else {
-        setheaderScroll(false)
-      }
-    }
-    window.addEventListener('scroll', fixedHeader)
-  }, [])
-  // const [openDropdown, setOpenDropdown] = useState(null);
-  // const toggleDropdown = (index) => {
-  //   setOpenDropdown(openDropdown === index ? null : index);
-  // };
-  // const [Dropdown, setDropdown] = useState(null);
-  // const dropdown = (index) => {
-  //   setDropdown(Dropdown === index ? null : index);
-  // };
 
   return (
     <>
-      <header className={headerScroll ? "fixed fix_style" : ""} >
+      <header className="fixed fix_style" >
         <div className="container">
           <nav className="navbar navbar-expand-lg">
             <Link className="navbar-brand" to="/">
