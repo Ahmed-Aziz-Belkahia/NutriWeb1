@@ -1011,10 +1011,41 @@ header .btn.puprple_btn:hover {
 .banner_section .app_btn li a {
     display: block;
     padding: 16px 30px;
-    background-color: var(--primary);
     position: relative;
-    border-radius: 12px;
-    transition: .4s all;/*width: 182px;*/
+    border-radius: 16px;
+    /* Liquid Glass Effect */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: linear-gradient(135deg, rgba(117, 197, 193, 0.4) 0%, rgba(117, 197, 193, 0.2) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+        0 8px 32px 0 rgba(117, 197, 193, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        0 0 0 0 rgba(117, 197, 193, 0);
+    /* Animations */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0) scale(1);
+    overflow: hidden;
+}
+
+.banner_section .app_btn li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.banner_section .app_btn li a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+    pointer-events: none;
 }
 
 .banner_section .app_btn li:last-child {
@@ -1022,7 +1053,9 @@ header .btn.puprple_btn:hover {
 }
 
 .banner_section .app_btn li a img {
-    transition: .4s all;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
 }
 
 .banner_section .app_btn li a .white_img {
@@ -1037,15 +1070,58 @@ header .btn.puprple_btn:hover {
 }
 
 .banner_section .app_btn li a:hover {
-    background-color: transparent;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 15px 40px 0 rgba(117, 197, 193, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(117, 197, 193, 0.2);
+    border-color: rgba(117, 197, 193, 0.5);
+}
+
+.banner_section .app_btn li a:hover::before {
+    left: 100%;
 }
 
 .banner_section .app_btn li a:hover .blue_img {
     opacity: 1;
+    transform: scale(1.05);
 }
 
 .banner_section .app_btn li a:hover .white_img {
     opacity: 0;
+    transform: translateX(-50%) scale(0.95);
+}
+
+.banner_section .app_btn li a:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 
+        0 5px 20px 0 rgba(117, 197, 193, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Pulse animation on page load */
+@keyframes glassButtonPulse {
+    0%, 100% {
+        box-shadow: 
+            0 8px 32px 0 rgba(117, 197, 193, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            0 0 0 0 rgba(117, 197, 193, 0);
+    }
+    50% {
+        box-shadow: 
+            0 8px 32px 0 rgba(117, 197, 193, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5),
+            0 0 15px rgba(117, 197, 193, 0.2);
+    }
+}
+
+.banner_section .app_btn li a {
+    animation: glassButtonPulse 3s ease-in-out infinite;
+}
+
+.banner_section .app_btn li a:hover {
+    animation: none;
 }
 
 /* hero slider users */
@@ -2299,16 +2375,70 @@ iframe#youtubevideo {
 .free_app_section .container .free_app_inner .free_text .app_btn li a {
     display: block;
     padding: 18px 30px;
-    background-color: var(--white);
     position: relative;
-    border-radius: 12px;
-    transition: .4s all;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Liquid Glass Effect */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        0 0 0 0 rgba(117, 197, 193, 0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0) scale(1);
+    animation: glassButtonPulse 3s ease-in-out infinite;
+}
+
+.free_app_section .container .free_app_inner .free_text .app_btn li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.free_app_section .container .free_app_inner .free_text .app_btn li a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.free_app_section .container .free_app_inner .free_text .app_btn li a img {
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .free_app_section .container .free_app_inner .free_text .app_btn li a:hover {
-    -webkit-box-shadow: 1px 4px 8px -2px rgba(0,0,0,0.5);
--moz-box-shadow: 1px 4px 8px -2px rgba(0,0,0,0.5);
-box-shadow: 1px 4px 8px -2px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.15) 100%);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 15px 40px 0 rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(117, 197, 193, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    animation: none;
+}
+
+.free_app_section .container .free_app_inner .free_text .app_btn li a:hover::before {
+    left: 100%;
+}
+
+.free_app_section .container .free_app_inner .free_text .app_btn li a:hover img {
+    transform: scale(1.05);
+}
+
+.free_app_section .container .free_app_inner .free_text .app_btn li a:active {
+    transform: translateY(-2px) scale(0.98);
 }
 
 .free_app_section .container .free_app_inner .free_text .app_btn li:last-child {
@@ -2612,19 +2742,87 @@ footer .top_footer .try_out {
 footer .app_btn li a {
     display: block;
     padding: 14px 24px;
-    background-color: var(--white);
     position: relative;
-    border-radius: 12px;
-    transition: .4s all;
+    border-radius: 16px;
     text-align: center;
+    overflow: hidden;
+    /* Liquid Glass Effect - Dark theme variant */
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        0 0 0 0 rgba(117, 197, 193, 0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0) scale(1);
+    animation: glassButtonPulseDark 3s ease-in-out infinite;
+}
+
+footer .app_btn li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+footer .app_btn li a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
+    pointer-events: none;
 }
 
 footer .app_btn li a img {
     height: 36px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 footer .app_btn li a:hover {
-    background: var(--lighter1);
+    background: linear-gradient(135deg, rgba(117, 197, 193, 0.3) 0%, rgba(117, 197, 193, 0.1) 100%);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 15px 40px 0 rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),
+        0 0 20px rgba(117, 197, 193, 0.2);
+    border-color: rgba(117, 197, 193, 0.4);
+    animation: none;
+}
+
+footer .app_btn li a:hover::before {
+    left: 100%;
+}
+
+footer .app_btn li a:hover img {
+    transform: scale(1.05);
+}
+
+footer .app_btn li a:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+@keyframes glassButtonPulseDark {
+    0%, 100% {
+        box-shadow: 
+            0 8px 32px 0 rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            0 0 0 0 rgba(117, 197, 193, 0);
+    }
+    50% {
+        box-shadow: 
+            0 8px 32px 0 rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 0 15px rgba(117, 197, 193, 0.15);
+    }
 }
 
 
@@ -4382,28 +4580,73 @@ footer .bottom_footer .developer_text a {
 .app_blocks .app_btn li a {
 	display: block;
 	padding: 16px 30px;
-	background-color: var(--primary);
-	border: 1px solid var(--primary);
 	position: relative;
-	border-radius: 12px; 
-	transition: .4s all;
+	border-radius: 16px;
+	/* Liquid Glass Effect */
+	backdrop-filter: blur(20px) saturate(180%);
+	-webkit-backdrop-filter: blur(20px) saturate(180%);
+	background: linear-gradient(135deg, rgba(117, 197, 193, 0.4) 0%, rgba(117, 197, 193, 0.2) 100%);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	box-shadow: 
+		0 8px 32px 0 rgba(117, 197, 193, 0.25),
+		inset 0 1px 0 rgba(255, 255, 255, 0.4),
+		0 0 0 0 rgba(117, 197, 193, 0);
+	/* Animations */
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	transform: translateY(0) scale(1);
+	overflow: hidden;
+	animation: glassButtonPulse 3s ease-in-out infinite;
+}
+
+.app_blocks .app_btn li a::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+	transition: left 0.6s ease;
+}
+
+.app_blocks .app_btn li a::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	border-radius: 16px;
+	background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+	pointer-events: none;
 }
 
 .app_blocks .app_btn li a:hover {
-	background-color: var(--white);
-	border: 1px solid var(--primary);
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.2) 100%);
+	transform: translateY(-5px) scale(1.02);
+	box-shadow: 
+		0 15px 40px 0 rgba(117, 197, 193, 0.35),
+		inset 0 1px 0 rgba(255, 255, 255, 0.5),
+		0 0 20px rgba(117, 197, 193, 0.2);
+	border-color: rgba(117, 197, 193, 0.5);
+	animation: none;
+}
+
+.app_blocks .app_btn li a:hover::before {
+	left: 100%;
 }
 
 .app_blocks .app_btn li a:hover .blue_img {
 	opacity: 1;
+	transform: scale(1.05);
 }
 
 .app_blocks .app_btn li a img {
-	transition: .4s all;
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	position: relative;
+	z-index: 1;
 }
 
 .app_blocks .app_btn li a:hover .white_img {
 	opacity: 0;
+	transform: translateX(-50%) scale(0.95);
 }
 
 .app_blocks .app_btn li a .white_img {
@@ -4411,6 +4654,13 @@ footer .bottom_footer .developer_text a {
 	left: 50%; 
 	transform: translateX(-50%); 
 	opacity: 1;
+}
+
+.app_blocks .app_btn li a:active {
+	transform: translateY(-2px) scale(0.98);
+	box-shadow: 
+		0 5px 20px 0 rgba(117, 197, 193, 0.3),
+		inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 
