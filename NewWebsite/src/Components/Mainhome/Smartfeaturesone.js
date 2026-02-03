@@ -104,7 +104,7 @@ const Smartfeaturesone = () => {
                               ))}
                             </ul>
                             <div className="btn_block">
-                              <Link to="/beta" className="btn light_btn">Get Started</Link>
+                              <a href="https://apps.apple.com/app/nutri-ai" target="_blank" rel="noopener noreferrer" className="btn light_btn">Get Started</a>
                             </div>
                           </div>
                         </div>

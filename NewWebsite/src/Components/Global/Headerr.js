@@ -38,11 +38,6 @@ const Main = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/beta">
-                    Beta
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link className="nav-link" to="/pricing">
                     Pricing
                   </Link>
@@ -59,9 +54,9 @@ const Main = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="btn puprple_btn " to="/beta">
-                    Get Started
-                  </Link>
+                  <a className="btn puprple_btn " href="https://apps.apple.com/app/nutri-ai" target="_blank" rel="noopener noreferrer">
+                    Download App
+                  </a>
                 </li>
               </ul>
             </div>
@@ -86,11 +81,6 @@ const Main = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/beta">
-                    Beta
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link className="nav-link" to="/pricing">
                     Pricing
                   </Link>
@@ -107,9 +97,9 @@ const Main = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="btn puprple_btn " to="/beta">
-                    Get Started
-                  </Link>
+                  <a className="btn puprple_btn " href="https://apps.apple.com/app/nutri-ai" target="_blank" rel="noopener noreferrer">
+                    Download App
+                  </a>
                 </li>
               </ul>
                 </div>

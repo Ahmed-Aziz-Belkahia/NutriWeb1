@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import white1 from "../../assets/images/element-white1.png"
 import white2 from "../../assets/images/element-white2.png"
 import appstore from "../../assets/images/appstore_blue.png"
@@ -39,19 +38,19 @@ const Downloadapp = () => {
               <span className="title_badge lighter mb-1">Download app</span>
               <h2>Download Nutri AI and start your journey</h2>
               <p>
-                Track meals, plan nutrition, and reach your health goals with AI-powered insights. Available now on iOS, coming soon to Android.
+                Track meals, plan nutrition, and reach your health goals with AI-powered insights. Available now on iOS and Android.
               </p>
             </div>
             <ul className="app_btn">
               <li>
-                <Link to="/beta">
-                  <img src={appstore} alt="download-app-img" />
-                </Link>
+                <a href="https://apps.apple.com/app/nutri-ai" target="_blank" rel="noopener noreferrer">
+                  <img src={appstore} alt="Download on App Store" />
+                </a>
               </li>
               <li>
-                <Link to="/beta">
-                  <img src={googleplay} alt="download-app-img" />
-                </Link>
+                <a href="https://play.google.com/store/apps/details?id=com.nutriai" target="_blank" rel="noopener noreferrer">
+                  <img src={googleplay} alt="Get it on Google Play" />
+                </a>
               </li>
             </ul>
           </div>

@@ -56,7 +56,7 @@ const Pricingone = () => {
                         <li><span className="icon"><i className={index === 2 ? "icofont-check-circled" : "icofont-close-circled"} /></span> Body composition analysis</li>
                         <li><span className="icon"><i className={index === 2 ? "icofont-check-circled" : "icofont-close-circled"} /></span> Advanced insights</li>
                       </ul>
-                      <Link to="/beta" className="btn puprple_btn">Get Started</Link>
+                      <a href="https://apps.apple.com/app/nutri-ai" target="_blank" rel="noopener noreferrer" className="btn puprple_btn">Get Started</a>
                     </div>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ const Pricingone = () => {
                         <li><span className="icon"><i className={index === 2 ? "icofont-check-circled" : "icofont-close-circled"} /></span> Body composition analysis</li>
                         <li><span className="icon"><i className={index === 2 ? "icofont-check-circled" : "icofont-close-circled"} /></span> Advanced insights</li>
                       </ul>
-                      <Link to="/beta" className="btn puprple_btn">Get Started</Link>
+                      <a href="https://apps.apple.com/app/nutri-ai" target="_blank" rel="noopener noreferrer" className="btn puprple_btn">Get Started</a>
                     </div>
                   </div>
                 </div>

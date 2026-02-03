@@ -78,15 +78,13 @@ const Growthsectionone = () => {
                   
                   <div style={{ display: 'flex', alignItems: 'center', gap: '30px', marginTop: '20px' }}>
                     <p style={{ flex: '1', fontSize: '16px', textAlign: 'left', margin: '0', padding: '0' }}>
-                      Nutri is currently in beta testing, and we're inviting early users to explore every feature for free.
-                      Your feedback helps us refine the app, fix small issues, and build the best version of Nutri together.
-                      By joining now, you'll be part of the first group shaping the future of personal nutrition.
+                      Nutri AI is now available on the App Store and Google Play. Download today and start your journey to better nutrition with AI-powered meal tracking and personalized insights.
                     </p>
                     
                     <div style={{ flexShrink: '0' }}>
-                      <Link to="/beta" className="btn btn-primary" style={{ padding: '15px 40px', fontSize: '16px', fontWeight: 'bold', whiteSpace: 'nowrap' }}>
-                        JOIN THE BETA NOW
-                      </Link>
+                      <a href="https://apps.apple.com/app/nutri-ai" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '15px 40px', fontSize: '16px', fontWeight: 'bold', whiteSpace: 'nowrap' }}>
+                        DOWNLOAD NOW
+                      </a>
                     </div>
                   </div>
                 </div>

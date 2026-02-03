@@ -21,20 +21,18 @@ const Footer = () => {
               <img src={footerlogo} alt="footer-img" />
             </div>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry lorem sum has been the industrys standard dummytext ever
-              since the when an unknown printer took.
+              Track meals, plan nutrition, and reach your health goals with AI-powered insights. Available now on iOS and Android.
             </p>
             <ul className="app_btn">
               <li>
-                <Link to="https://support.apple.com/">
-                  <img src={appstore} alt="footer-img" />
-                </Link>
+                <a href="https://apps.apple.com/app/nutri-ai" target="_blank" rel="noopener noreferrer">
+                  <img src={appstore} alt="Download on App Store" />
+                </a>
               </li>
               <li>
-                <Link to="https://play.google.com/">
-                  <img src={googleplay} alt="footer-img" />
-                </Link>
+                <a href="https://play.google.com/store/apps/details?id=com.nutriai" target="_blank" rel="noopener noreferrer">
+                  <img src={googleplay} alt="Get it on Google Play" />
+                </a>
               </li>
             </ul>
           </div>

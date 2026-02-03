@@ -41,14 +41,16 @@ const Appsol = () => {
                   </p>
                   {/* button   */}
                   <div className="btn_block">
-                    <Link
-                      to="/beta"
+                    <a
+                      href="https://apps.apple.com/app/nutri-ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="btn puprple_btn aos-init aos-animate"
                       data-aos="fade-in"
                       data-aos-duration={500}
                     >
                       Download NutriAI
-                    </Link>
+                    </a>
                   </div>
                
               </div>

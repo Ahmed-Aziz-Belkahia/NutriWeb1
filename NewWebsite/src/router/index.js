@@ -11,13 +11,6 @@ import Signup from "../Components/Signup/main";
 import Bloglist from "../Components/Bloglist/main";
 import Blogsingle from "../Components/Blogsingle/main";
 import Pricing from "../Components/Pricing/main";
-import Beta from "../Components/Beta/main";
-import BetaAdmin from "../Components/BetaAdmin/main";
-import BetaIOS from "../Components/BetaIOS/main";
-import BetaVerify from "../Components/BetaVerify/main";
-import BetaIOSInstructions from "../Components/BetaIOSInstructions/main";
-import BetaAndroid from "../Components/BetaAndroid/main";
-import BetaAndroidInstructions from "../Components/BetaAndroidInstructions/main";
 import Privacy from "../Components/Privacy/main";
 import Terms from "../Components/Terms/main";
 
@@ -41,16 +34,17 @@ const Index = () => {
       <Route path="/blogsingle" element={<Blogsingle />} />
       <Route path="/blog/:id" element={<Blogsingle />} />
       <Route path="/pricing" element={<Pricing />} />
-      <Route path="/beta" element={<Beta />} />
-      <Route path="/beta-ios" element={<BetaIOS />} />
-      <Route path="/beta-android" element={<BetaAndroid />} />
-      <Route path="/beta-verify" element={<BetaVerify />} />
-      <Route path="/beta-ios-instructions" element={<BetaIOSInstructions />} />
-      <Route path="/beta-android-instructions" element={<BetaAndroidInstructions />} />
-      <Route path="/beta-admin" element={<BetaAdmin />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/web-onboarding" element={<Navigate to="/" replace />} />
+      {/* Redirect old beta routes to home */}
+      <Route path="/beta" element={<Navigate to="/" replace />} />
+      <Route path="/beta-ios" element={<Navigate to="/" replace />} />
+      <Route path="/beta-android" element={<Navigate to="/" replace />} />
+      <Route path="/beta-verify" element={<Navigate to="/" replace />} />
+      <Route path="/beta-ios-instructions" element={<Navigate to="/" replace />} />
+      <Route path="/beta-android-instructions" element={<Navigate to="/" replace />} />
+      <Route path="/beta-admin" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };

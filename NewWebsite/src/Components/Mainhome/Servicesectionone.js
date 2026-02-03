@@ -157,36 +157,32 @@ const Servicesectionone = () => {
               <h6>Download app to get started</h6>
               <ul className="app_btn">
                 <li>
-                  <Link to="/beta">
+                  <a href="https://apps.apple.com/app/nutri-ai" target="_blank" rel="noopener noreferrer">
                     <img
                       className="blue_img"
                       src={appstore_blue}
-                      alt="image"
-                      to="/"
+                      alt="Download on App Store"
                     />
                     <img
                       className="white_img"
                       src={appstore_white}
-                      alt="image"
-                      to="/"
+                      alt="Download on App Store"
                     />
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link to="#">
+                  <a href="https://play.google.com/store/apps/details?id=com.nutriai" target="_blank" rel="noopener noreferrer">
                     <img
                       className="blue_img"
                       src={googleplay_blue}
-                      alt="image"
-                      to="/"
+                      alt="Get it on Google Play"
                     />
                     <img
                       className="white_img"
                       src={googleplay_white}
-                      alt="image"
-                      to="/"
+                      alt="Get it on Google Play"
                     />
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>

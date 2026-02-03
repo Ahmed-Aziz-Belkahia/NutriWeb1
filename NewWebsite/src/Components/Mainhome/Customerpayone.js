@@ -66,14 +66,16 @@ const Customerpayone = () => {
                   </li>
                 </ul>
                 <div className="btn_block">
-                  <Link
-                    to="/beta"
+                  <a
+                    href="https://apps.apple.com/app/nutri-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn puprple_btn aos-init aos-animate"
                     data-aos="fade-in"
                     data-aos-duration={1500}
                   >
                     Get Started
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -132,14 +134,16 @@ const Customerpayone = () => {
                 </ul>
 
                 <div className="btn_block">
-                  <Link
-                    to="/beta"
+                  <a
+                    href="https://apps.apple.com/app/nutri-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn puprple_btn aos-init aos-animate"
                     data-aos="fade-in"
                     data-aos-duration={1500}
                   >
                     Get Started
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
